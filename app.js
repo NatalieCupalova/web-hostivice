@@ -7,8 +7,8 @@ var GithubWebHook = require('express-github-webhook');
 const bodyParser = require('body-parser')
 
 const key = fs.readFileSync('../nc-secret', 'utf8')
-// const handler = createHandler({ path: '/github-webhook', secret: key })
-const handler = GithubWebHook({ path: '/github-webhook', secret: 'nanycupy178' })
+const handler = createHandler({ path: '/github-webhook', secret: 'nanycupy178' })
+// const handler = GithubWebHook({ path: '/github-webhook', secret: 'nanycupy178' })
 
 const app = express()
 // const server = http.createServer((req, res) => {
@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 
 // Configure Github Webhook
 
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 app.use(handler)
 
 handler.on('push', (event) => {
