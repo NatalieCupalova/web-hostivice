@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 // Configure Github Webhook
 
-app.get('/github-webhook', (req, res) => {
+app.post('/github-webhook', (req, res) => {
   handler(req, res, (err) => {
     res.statusCode = 404
     res.end('no such location')
