@@ -16,15 +16,10 @@ app.listen(port, () => log(`🍹 Express server is listening on port ${port}`))
 // Configure basic routes
 
 app.get('/', (req, res) => {
-  res.send(
-    `
-    <h1>Hello World!</h1>
-    <h2>Testing webhooks</h2>
-    <h2>Yoy</h2>
-    <br/>
-    `
-  )
+  res.redirect(301, 'ova')
 })
+
+app.use('/ova', express.static('web'))
 
 // Configure Github Webhook
 
