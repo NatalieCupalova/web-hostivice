@@ -8,9 +8,16 @@ const key = fs.readFileSync('../nc-secret', 'utf8')
 const handler = createHandler({ path: '/github-webhook', secret: key })
 
 const app = express()
+const server = http.createServer((req, res) => {
+  handler(req, res, function (err) {
+    res.statusCode = 404
+    res.end('no such location')
+  })
+  app(req, res)
+})
 const port = process.env.PORT || 3000
 
-app.listen(port, () => log(`🍹 Express server is listening on port ${port}`))
+server.listen(port, () => log(`🍹 Express server is listening on port ${port}`))
 
 // Configure basic routes
 
@@ -26,12 +33,12 @@ app.get('/', (req, res) => {
 
 // Configure Github Webhook
 
-app.post('/github-webhook', (req, res) => {
-  handler(req, res, (err) => {
-    res.statusCode = 404
-    res.end('no such location')
-  })
-})
+// app.post('/github-webhook', (req, res) => {
+//   handler(req, res, (err) => {
+//     res.statusCode = 404
+//     res.end('no such location')
+//   })
+// })
 
 handler.on('push', (event) => {
   console.log('Received a push event for %s to %s',
