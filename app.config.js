@@ -7,7 +7,7 @@ module.exports = {
         PORT: 8089,
         NODE_ENV: "production"
       },
-      cwd: '/apps/natalie-cupalova-website',
+      cwd: "/apps/natalie-cupalova-website",
       node_args: "--harmony"
     }
   ]
