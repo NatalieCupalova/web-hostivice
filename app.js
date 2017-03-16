@@ -1,5 +1,6 @@
 const log = console.log
 const fs = require('fs')
+const exec = require('child_process').exec
 const http = require('http')
 const express = require('express')
 const createHandler = require('github-webhook-handler')
@@ -32,4 +33,8 @@ handler.on('push', (event) => {
   console.log('Received a push event for %s to %s',
     event.payload.repository.name,
     event.payload.ref)
+
+  exec('git pull && npm i && pm2 reload web-hostivice', (error, stdout, stderr) => {
+    log(stdout)
+  })
 })
