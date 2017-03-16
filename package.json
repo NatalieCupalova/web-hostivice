@@ -1,0 +1,17 @@
+{
+  "name": "web-hostivice",
+  "version": "1.0.0",
+  "description": "Web o Hostivicích",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --harmony ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NatalieCupalova/web-hostivice.git"
+  },
+  "keywords": [],
+  "author": "Natálie Cupalová",
+  "license": "MIT",
+  "homepage": "https://natalie.cup.al/ova/o-hostivicich/"
+}
