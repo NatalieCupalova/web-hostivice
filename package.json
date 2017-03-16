@@ -15,6 +15,7 @@
   "license": "MIT",
   "homepage": "https://natalie.cup.al/ova/o-hostivicich/",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "github-webhook-handler": "^0.6.0"
   }
 }

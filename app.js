@@ -1,6 +1,11 @@
-const express = require('express')
-const http = require('http')
 const log = console.log
+const fs = require('fs')
+const http = require('http')
+const express = require('express')
+const createHandler = require('github-webhook-handler')
+
+const key = fs.readFileSync('../nc-secret', 'utf8')
+const handler = createHandler({ path: '/github-webhook', secret: key })
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -16,4 +21,19 @@ app.get('/', (req, res) => {
     <br/>
     `
   )
+})
+
+// Configure Github Webhook
+
+app.get('/github-webhook', (req, res) => {
+  handler(req, res, (err) => {
+    res.statusCode = 404
+    res.end('no such location')
+  })
+})
+
+handler.on('push', (event) => {
+  console.log('Received a push event for %s to %s',
+    event.payload.repository.name,
+    event.payload.ref)
 })
