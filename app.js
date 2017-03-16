@@ -10,7 +10,7 @@ const key = fs.readFileSync('../nc-secret', 'utf8')
 const handler = createHandler({ path: '/github-webhook', secret: key })
 // const handler = GithubWebHook({ path: '/github-webhook', secret: 'nanycupy178' })
 
-log(`KEYSTART${key}KEYEND`)
+log(`KEYSTART${key.trim()}KEYEND`)
 
 const app = express()
 // const server = http.createServer((req, res) => {
