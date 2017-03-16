@@ -1,0 +1,4 @@
+node_modules/
+build/
+.vscode/chrome/
+debug.log

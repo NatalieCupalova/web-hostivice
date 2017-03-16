@@ -13,5 +13,8 @@
   "keywords": [],
   "author": "Natálie Cupalová",
   "license": "MIT",
-  "homepage": "https://natalie.cup.al/ova/o-hostivicich/"
+  "homepage": "https://natalie.cup.al/ova/o-hostivicich/",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
