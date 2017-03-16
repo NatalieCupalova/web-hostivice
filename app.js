@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
   res.send(
     `
     <h1>Hello World!</h1>
-    <h2>Testing webhook</h2>
+    <h2>Testing webhooks</h2>
     <br/>
     `
   )
