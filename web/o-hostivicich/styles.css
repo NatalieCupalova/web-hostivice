@@ -1,7 +1,55 @@
+html {
+    font-family: "Ubuntu";
+}
+
 h1 {
     color: DarkSlateGray;
 }
 
 p {
     font-size: 125%;
+    line-height: 1.4;
+}
+
+img {
+    border-radius: 4px;
+}
+
+li {
+    font-size: 125%;
+    line-height: 1.5;
+}
+
+.zamek-image-container {
+    width: 100%;
+}
+
+.zamek-image {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.main-container {
+    margin: 70px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 125%;
+    margin-top: 60px;
+}
+
+@media (max-width: 700px) {
+.zamek-image {
+    width: 90%;
+}
+.zajimavosti {
+    display: none;
+}
+.main-container {
+    margin: 30px;
+}
 }
